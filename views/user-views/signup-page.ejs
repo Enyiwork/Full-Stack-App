@@ -1,0 +1,37 @@
+<h2>Iron Chat</h2>
+
+<% if (typeof errorMessage !== "undefined") { %>
+   <p class="error-message"> <%= errorMessage %> </p>
+<% } %>
+
+<form id="form" method="post" action="/process-signup">
+                <!-- First Name -->
+  <label for="first-name-input"> First Name </label>
+  <input id="first-name-input" type="text" placeholder="e.g Armando" name="signupFirstName" />
+
+  <br />
+                <!-- Last Name -->
+  <label for="last-name-input"> Last Name </label>
+  <input id="last-name-input" type="text" placeholder="e.g Guerra" name="signupLastName" />
+
+  <br />
+                <!-- Email Address -->
+  <label for="email-input"> Email Address </label>
+  <input id="email-input" type="email" placeholder="e.g armandoguerra@gmail.com" name="signupEmail" />
+
+  <br />
+                <!-- Password -->
+  <label for="password-input"> Password </label>
+  <input id="password-input" type="password" placeholder="*********************************************************"
+   name="signupPassword" />
+
+   <br />
+
+  <button> Save Your Account </button>
+</form>
+
+                <!-- If have an account Login -->
+<p>
+  Already have an accont?
+  <a href="/login">Log In</a>
+</p>
