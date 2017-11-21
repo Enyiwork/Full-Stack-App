@@ -1,2 +1,60 @@
-<h1><%= title %></h1>
-<p>Welcome to <%= title %></p>
+<header class="nav-bar">
+  <h1>Welcome to <%= title %></h1>
+  <h2>Log In Here</h2>
+
+  <form class="login" method="post" action="process-login">
+
+
+    <input class="login-input" id="email-input" type="email" placeholder="email address" name="loginEmail"/>
+    <input class="login-input" id="password-input" type="password" placeholder="password" name="loginPassword" />
+
+    <button class="login-button">LogIn</button>
+  </form>
+
+
+  <img src="http://www.techweez.com/wp-content/uploads/2015/06/emoji-2.png" />
+</header>
+
+
+<% if (typeof errorMessage !== "undefined") { %>
+   <p class="error-message"> <%= errorMessage %> </p>
+<% } %>
+
+<form id="form" method="post" action="/process-signup">
+
+<label>Create an Account</label>
+                <!-- First Name -->
+  <%# <label for="first-name-input"> First Name </label>%>
+  <input  class="name" id="first-name-input" type="text" placeholder="First Name" name="signupFirstName" />
+
+                <!-- Last Name -->
+  <%# <label for="last-name-input"> Last Name </label>%>
+  <input class="name" id="last-name-input" type="text" placeholder="Last Name" name="signupLastName" />
+
+  <br />
+                <!-- Email Address -->
+  <%# <label for="email-input"> Email Address </label>%>
+  <input id="email-input" type="email" placeholder="Email Address" name="signupEmail" />
+
+  <br />
+                <!-- Password -->
+  <%# <label for="password-input"> Password </label>%>
+  <input id="password-input" type="password" placeholder="New Password"
+   name="signupPassword" />
+
+   <br />
+
+  <button> Sign Up </button>
+</form>
+
+<div class="signup-facebook-google">
+
+  <a class="p" href="/facebook/login">Sign Up With Facebook</a>
+  <a class="p" href="/google/login">Sign Up With Google Account</a>
+
+</div>
+
+
+
+
+                <!-- If have an account Login -->

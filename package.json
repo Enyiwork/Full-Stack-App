@@ -27,5 +27,17 @@
   "devDependencies": {},
   "author": "",
   "license": "ISC",
+  "bin": {
+    "app": "bcrypt.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Enyiwork/Full-Stack-App.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Enyiwork/Full-Stack-App/issues"
+  },
+  "homepage": "https://github.com/Enyiwork/Full-Stack-App#readme",
   "description": ""
 }

@@ -12,7 +12,8 @@ const passport     = require("passport");
 // run the code that setup the Mongoose database connection'
 require("./config/mongoose-setup");
 
-
+// run the code that setup the Passport
+require("./config/passport-setup");
 
 const app = express();
 
@@ -21,7 +22,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.title = 'Iron Chat';
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -61,6 +62,9 @@ app.use('/', index);
 
 const myUserRouter = require("./routes/user-router");
 app.use(myUserRouter);
+
+const myChatRouter = require("./routes/chat-router");
+app.use(myChatRouter);
 
 // END ROUTER------------------------------------------------------
 

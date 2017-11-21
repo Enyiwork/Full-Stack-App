@@ -1,31 +1,40 @@
 body {
-  padding: 50px;
+
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #e6e6e6
 }
 
 a {
   color: #00B7FF;
 }
 #form {
-  margin: 30px auto;
-  width: 380px;
+  float: right;
+  padding-right: 100px;
+  font-size: 24px;
+  width: 35%;
+  margin-top: 30px;
+  margin-right: 200px;
 }
 
 #form label {
   color: #000;
   display: inline-block;
   margin-bottom: 10px;
-  text-align: center;
+  font-size: 47px;
+  margin-left: 23px;
+  padding-bottom: 25px;
   width: 100%;
 }
 
-#form input,
+/*#form input,*/
 #form button {
   box-sizing: border-box;
   font-size: 14px;
   outline: 0;
-  padding: 4px;
+  padding: 10px;
   width: 100%;
+  border-radius: 4px;
+  margin-bottom: 20px;
 }
 
 #form button {
@@ -35,12 +44,14 @@ a {
   color: #000;
   cursor: pointer;
   display: inline-block;
-  font-size: 14px;
+  font-size: 25px;
   padding: 8px 16px;
   text-decoration: none;
   text-transform: uppercase;
   transition: .3s ease background;
-  width: 100%;
+  width: 98%;
+  float: right;
+
 }
 
 #form button:hover {
@@ -55,5 +66,96 @@ a {
   color: #fff;
   margin: 20px auto;
   padding: 20px;
-  width: 50%;
+  width: 28%;
+  text-align: center;
+  margin-left: 54%;
+  font-size: 20px;
+}
+ .name{
+   width: 47%;
+ }
+input{
+  padding-left: 20px;
+  padding-right: 74px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: -webkit-fill-available;
+  margin-left: 2%;
+  border: 1px solid #bdc7d8;
+}
+.signup-facebook-google{
+  width: -webkit-fill-available;
+  display: flex;
+  padding-left: 900px;
+
+}
+.p{
+  float: right;
+  width: 34%;
+  font-size: 20px;
+  display: flex;
+
+
+}
+.nav-bar{
+  background-color: #3b5998;
+  background-image: linear-gradient(#4e69a2, #3b5998 50%);
+  border-bottom: 1px solid #133783;
+  min-height: 85px;
+}
+.nav{
+  float: right;
+}
+h1{
+  padding-left: 99px;
+  font-size: 3em;
+  padding-top: 25px;
+  color: #FFF;
+  width: 30%;
+  margin: -28px 12%;
+  position: absolute;
+  top: 27px;
+  text-align: center;
+}
+h2{
+  padding-left: 777px;
+  padding-top: 25px;
+  color: #FFF;
+  margin: -28px 12%;
+  position: absolute;
+  top: 27px;
+  text-align: center;
+}
+img{
+  vertical-align: middle;
+  width: 140px;
+  margin-left: 10%;
+}
+
+.login{
+  display: flex;
+  padding-top: 65px;
+  float: right;
+  padding-right: 360px;
+  width: 42%;
+}
+.login-label{
+  color: #fff;
+}
+.login-button{
+  color: #FFF;
+  background: transparent;
+  height: 39px;
+  padding-right: 10px;
+  margin-left: 20px;
+}
+.food{
+  background-color: #FFF;
+  height: -webkit-fill-available;
+  margin-top: 30px;
+  text-align: center;
+  border-top: 1px solid;
+  font-size: 25px;
+  padding-top: 10px;
 }

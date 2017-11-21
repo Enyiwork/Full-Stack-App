@@ -1,0 +1,17 @@
+
+<% if (currentUser) { %>
+  <p>Hello, <%= currentUser.fullName %>! </p>
+<% } %>
+<p>Welcome to <%= title %></p>
+
+<% if (currentUser) { %>
+  <p>Did you know you have your account since,
+   <%= currentUser.createdAt %>? </p>
+<% } else { %>
+    <p>
+    You should <a href="/signup">sign up TODAY </a>!
+    </p>
+<% } %>
+
+<div id="disqus_thread"></div>
+<script>
