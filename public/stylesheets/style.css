@@ -127,10 +127,15 @@ h2{
   top: 27px;
   text-align: center;
 }
-img{
+.img{
   vertical-align: middle;
   width: 140px;
   margin-left: 10%;
+}
+.img-profile{
+  vertical-align: middle;
+  width: 140px;
+  margin-left: 20%;
 }
 
 .login{
@@ -158,4 +163,161 @@ img{
   border-top: 1px solid;
   font-size: 25px;
   padding-top: 10px;
+}
+/* Fix user-agent */
+
+
+ul {
+  list-style: none;
+  word-wrap: break-word;
+}
+
+/* Pages */
+
+.pages {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.page {
+  margin-top: 5%;
+  height: 70%;
+  position: absolute;
+  width: 40%;
+  margin-left: 5%;
+  display: flex;
+
+}
+
+/* Login Page */
+
+.login.page {
+  background-color: #000;
+}
+
+.login.page .form {
+  height: 100px;
+  margin-top: -100px;
+  position: absolute;
+
+  text-align: center;
+  top: 50%;
+  width: 100%;
+}
+
+.login.page .form .usernameInput {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+  outline: none;
+  padding-bottom: 15px;
+  text-align: center;
+  width: 400px;
+}
+
+.login.page .title {
+  font-size: 200%;
+}
+
+.login.page .usernameInput {
+  font-size: 200%;
+  letter-spacing: 3px;
+}
+
+.login.page .title, .login.page .usernameInput {
+  color: #fff;
+  font-weight: 100;
+}
+
+/* Chat page */
+
+.chat.page {
+  display: none;
+}
+
+/* Font */
+
+.messages {
+  font-size: 150%;
+
+}
+
+.inputMessage {
+  font-size: 100%;
+}
+
+.log {
+  color: #656565;
+  font-size: 75%;
+  margin: 5px;
+  text-align: center;
+}
+
+/* Messages */
+
+.chatArea {
+  height: 100%;
+  padding-bottom: 60px;
+  border: 2px solid;
+  width: 100%;
+  border-radius: 10px;
+  background-image: url("https://s-media-cache-ak0.pinimg.com/originals/87/91/fd/8791fda447b7bab3b7ade8f55e87192b.jpg");
+}
+
+.messages {
+  height: 100%;
+  margin: 0;
+  overflow-y: scroll;
+  padding: 10px 20px 10px 20px;
+
+}
+
+.message.typing .messageBody {
+  color: gray;
+}
+
+.username {
+  font-weight: 700;
+  overflow: hidden;
+  padding-right: 15px;
+  text-align: right;
+}
+
+/* Input */
+
+.inputMessage {
+  border: 1px solid #000;
+  bottom: 0;
+  height: 50px;
+  left: 0;
+  outline: none;
+  padding-left: 10px;
+  width: 94%;
+  font-size: 25px;
+  margin-left: 3%;
+
+}
+.li-message{
+  display: list-item;
+  background-color: #FFF;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-top: 5px;
+  margin-bottom: 10px;
+}
+
+.myProfile{
+  float: right;
+  margin-top: 26px;
+  padding-right: 35px;
+  font-size: 24px;
+  color: #FFF;
+}
+.myProfile:hover{
+  color: #FFF;
+  text-decoration: none;
+
 }

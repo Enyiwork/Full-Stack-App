@@ -1,19 +1,9 @@
 const express = require("express");
 
-const app = express();
+const router = express.Router();
 
-const server = require("http").createServer(app);
-
-const io = require("socket.io").listen(server);
-
-users = [];
-
-connection = [];
-
-
-
-app.get("/login", (req, res) => {
-  res.sendFile(__dirname + "user-views/chat-setup");
+router.get("/publicChat", (req, res, next) => {
+  res.render("user-views/chat-setup");
 });
 
-module.exports = app;
+module.exports = router;

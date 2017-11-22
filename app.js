@@ -7,6 +7,7 @@ const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
 const session      = require("express-session");
 const passport     = require("passport");
+const app = express();
 
 
 // run the code that setup the Mongoose database connection'
@@ -15,7 +16,7 @@ require("./config/mongoose-setup");
 // run the code that setup the Passport
 require("./config/passport-setup");
 
-const app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -65,6 +66,9 @@ app.use(myUserRouter);
 
 const myChatRouter = require("./routes/chat-router");
 app.use(myChatRouter);
+
+const myProfile = require("./routes/preferences-router");
+app.use(myProfile);
 
 // END ROUTER------------------------------------------------------
 

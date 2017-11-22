@@ -33,9 +33,9 @@ router.post("/process-signup", (req, res, next) => {
         // early return to prevent the rest of the code from running
         // prevent the reset of the code running
         return;
-      } else if (req.body.signupPassword.length < 6) {
+      } else if (req.body.signupPassword.length <= 8) {
 
-        res.locals.errorMessage = "You need a password with at least 6 characters";
+        res.locals.errorMessage = "You need a password with at least 8 characters";
         res.render("index");
 
         return;
@@ -127,7 +127,7 @@ router.post("/process-login", (req, res, next) => {
             } else {
 
               // redirect to home page on successful log in
-              res.redirect("/login");
+              res.redirect("publicChat");
 
             }
          }); // req.login()
