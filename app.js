@@ -23,7 +23,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // default value for title local
-app.locals.title = 'Iron Chat';
+app.locals.title = 'ZOOM';
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -67,8 +67,8 @@ app.use(myUserRouter);
 const myChatRouter = require("./routes/chat-router");
 app.use(myChatRouter);
 
-const myProfile = require("./routes/preferences-router");
-app.use(myProfile);
+const myRoom = require("./routes/preferences-router");
+app.use(myRoom);
 
 // END ROUTER------------------------------------------------------
 

@@ -96,8 +96,8 @@ passport.use(
   // 1st arg of GoogleStrategy -> settings object
   new GoogleStrategy(
     {
-      clientID:"240235957113-8qe6r1jucimirfrjkacomc25f0nav1nj.apps.googleusercontent.com",
-      clientSecret: "kI6FTPW7GuUcw9qUMha-et1I",
+      clientID:"???",
+      clientSecret: "?",
 
       // URL (where to  go after log in is successful)( one of our routes)
       callbackURL: "/google/success",

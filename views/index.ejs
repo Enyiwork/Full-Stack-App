@@ -1,6 +1,6 @@
 <header class="nav-bar">
-  <h1>Welcome to <%= title %></h1>
-  <h2>Log In Here</h2>
+  <h1><%= title %></h1>
+  <h2 class="h2">Log In Here</h2>
 
   <form class="login" method="post" action="process-login">
 
@@ -12,13 +12,13 @@
   </form>
 
 
-  <img class="img" src="http://www.techweez.com/wp-content/uploads/2015/06/emoji-2.png" />
+  <img class="img" src="https://res.cloudinary.com/crunchbase-production/image/upload/v1454008732/mnno8g6ae7mcjnawnfpx.png" />
 </header>
 
-
 <% if (typeof errorMessage !== "undefined") { %>
-   <p class="error-message"> <%= errorMessage %> </p>
-<% } %>
+  <p class="error-message"> <%= errorMessage %> </p>
+  <% } %>
+
 
 <form id="form" method="post" action="/process-signup">
 
@@ -55,7 +55,9 @@
 </div>
 <footer class="food">
 
-      Create by Robert E Gonzalez with 🤪🤩🤓
+    <p class="food-p">
+      Create at Ironhack by Robert E Gonzalez with 💖
+    </p>
 
 </footer>
 
