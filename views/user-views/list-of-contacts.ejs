@@ -9,41 +9,21 @@
 </div>
 
 
-  <ul class="pages">
-      <li class="chat page">
-        <div class="chatArea">
-          <ul class="messages">
+<!-- Profile Texts -->
+<div class="div-profile">
+  <button type="button" class="button-plus" data-container="body" data-toggle="popover" data-placement="right" data-active="emoji">
+    <img class="img-plus-btn"src="https://cdn2.iconfinder.com/data/icons/picons-essentials/71/user_add-512.png" />
+  </button>
 
-          </ul>
-          <button type="button" class="button-emoji" data-container="body" data-toggle="popover" data-placement="right" data-active="emoji">
-            <img class="img-emoji-btn"src="http://3.bp.blogspot.com/-KXkwqMf_5U0/VcsSJuhnQzI/AAAAAAAAAUs/9UcYoc7OuNw/s1600/55bb5072f3b1a.png" />
-          </button>
-          <input class="inputMessage" placeholder="Type here..."/>
-
-        </div>
-      </li>
-      <li class="login page">
-        <div class="form">
-          <h3 class="title">What's your nickname Chat?</h3>
-          <input class="usernameInput" type="text" maxlength="14" />
-        </div>
-      </li>
-    </ul>
-
-
-<div id="image-box">
-  <ul>
     <div id="btn-plus">
       <ul>
+
 
         <h2 class="contact-title">New Contact</h2>
 
         <form class="add-contacts" method="post" action="/contact">
-          <input id="initial" type="text" placeholder="A"
-          name="initial">
 
-          <br />
-          
+
           <input id="first-name" type="text" placeholder="First Name"
           name="firstN">
 
@@ -66,5 +46,24 @@
 
       </ul>
     </div>
+
+  <a class="list-contacts" href="my-list-contacts">List Contacts</a>
+
+
+  <ul>
+  <% listOfContacts.forEach((oneContact) => { %>
+    <li style="margin-right: 5%; margin-bottom: 5%; font-size: 20px; color: #FFF;">
+    <h4>Name: <%= oneContact.firstname +" "+ oneContact.lastname %> </h4>
+    <p>Phone Number:  <%= oneContact.phone %> </p>
+    <p>Eamil Address:  <%= oneContact.email %> </p>
+
+    </li>
+    <% }) %>
   </ul>
+
+
+
+
+
+
 </div>

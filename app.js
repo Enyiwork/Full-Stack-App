@@ -70,6 +70,9 @@ app.use(myChatRouter);
 const myRoom = require("./routes/preferences-router");
 app.use(myRoom);
 
+const myContactRouter = require("./routes/contacts-router");
+app.use(myContactRouter);
+
 // END ROUTER------------------------------------------------------
 
 // catch 404 and forward to error handler

@@ -3,6 +3,7 @@
   <a class="myProfile" href="/profile">My Profile<img class="img-nav-login" src="https://cdn3.iconfinder.com/data/icons/rcons-user-action/32/boy-512.png" /></a>
   <a class="myList" href="/list">List Goals<img class="img-list" src="https://cdn3.iconfinder.com/data/icons/business-212/48/checklist-512.png"></a>
   <a class="contacts" href="/contacts">Contacts<img class="contacts-img" src="https://cdn3.iconfinder.com/data/icons/users/100/contacts_book-512.png"></a>
+  <a class="home" href="/publicChat">Home<img class="home-img" src="http://dougbond.com/images/home-icon.png"></a>
   <img class="img-profile" src="https://res.cloudinary.com/crunchbase-production/image/upload/v1454008732/mnno8g6ae7mcjnawnfpx.png" />
   <h1><%= title %></h1>
 </div>
@@ -14,30 +15,37 @@
   <button type="button" class="button-plus" data-container="body" data-toggle="popover" data-placement="right" data-active="emoji">
     <img class="img-plus-btn"src="https://cdn2.iconfinder.com/data/icons/picons-essentials/71/user_add-512.png" />
   </button>
+
+  <a class="list-contacts" href="my-list-contacts">List Contacts</a>
+
   <div id="btn-plus">
     <ul>
 
-      <h2>hello word</h2>
-      <form class="add-contacts" method="post" action="/rooms">
+      <h2 class="contact-title">New Contact</h2>
+
+      <form class="add-contacts" method="post" action="/contact">
+
         <input id="first-name" type="text" placeholder="First Name"
-        name="roomName">
+        name="firstN">
 
         <input id="last-name" type="text" placeholder="Last Name"
-        name="roomPhoto">
+        name="lastN">
 
         <br />
 
         <input id="phone" type="text" placeholder="Phone Number"
-        name="roomDescription">
+        name="phoneN">
         <br />
 
         <input id="email" type="email" placeholder="Email Address"
-        name="roomDescription">
+        name="emailN">
         <br />
 
         <button class="save-btn"> Save </button>
       </form>
 
+
     </ul>
   </div>
+
 </div>

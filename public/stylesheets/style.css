@@ -4,6 +4,7 @@ body {
   background-image: url("https://tse3.mm.bing.net/th?id=OIP.FxX3s1EPmIqLoc7YkX2WMAE8DF&pid=15.1&P=0&w=271&h=170");
   background-size: cover;
   background-repeat: no-repeat;
+
 }
 
 a {
@@ -176,7 +177,8 @@ h1{
 
 ul {
   list-style: none;
-  word-wrap: break-word;
+  margin-top: 60px;
+
 }
 
 /* Pages */
@@ -349,6 +351,24 @@ ul {
   color: #FFF;
   text-decoration: none;
 }
+.home-img{
+  vertical-align: middle;
+  width: 30%;
+  margin-left: 3px;
+}
+.home{
+  float: right;
+  margin-top: 63px;
+  font-size: 24px;
+  color: #FFF;
+  width: 10%;
+}
+.home:hover{
+  color: #FFF;
+  text-decoration: none;
+}
+
+
 
 .img-nav-login{
   width: 35px;
@@ -471,4 +491,21 @@ ul {
   margin-top: 35px;
   border-radius: 15px;
   padding: 3%;
+  margin-bottom: 40px;
+
+}
+.contact-title{
+  font-size: 30px;
+  margin-bottom: 30px;
+  margin-left: 340px;
+  color: #FFF;
+}
+.list-contacts{
+  font-size: 2em;
+  outline: transparent;
+  color: #FFF;
+}
+.list-contacts:hover{
+  color: #FFF;
+  text-decoration: none;
 }

@@ -1,37 +1,38 @@
 const express = require("express");
 
-const RoomModel = require("../models/contacts-model");
+const ContactModel = require("../models/contacts-model");
 
 const router = express.Router();
 
-router.get("/rooms/new", (req, res, next) => {
+router.get("/contacts/new", (req, res, next) => {
   if (req.user === undefined) {
     res.redirect("/login");
 
     return;
   }
 
-  res.render("room-views/room-form");
+  res.render("user-views/form-contacts");
 });
 
-router.post("/contacts", (req, res, next) => {
+router.post("/contact", (req, res, next) => {
   // redirect to log in if there is no logged in users
   if (req.user === undefined) {
     res.redirect("/login");
     return;
   }
-      const theRoom = new RoomModel({
-        name:          req.body.roomName,
-        photoUrl:      req.body.roomPhoto,
-        description:   req.body.roomDescription,
+      const theContact = new ContactModel({
+        initial:   req.body.initial,
+        firstname: req.body.firstN,
+        lastname:  req.body.lastN,
+        phone:     req.body.phoneN,
+        email:     req.body.emailN,
         // "req.user" is the logged in user's document (defined by Passport)
-        owner:         req.user._id
+        owner:     req.user._id
       });
 
-
-      theRoom.save()
+      theContact.save()
       .then(() => {
-        res.redirect("/my-rooms");
+        res.redirect("/my-list-contacts");
       })
       .catch((err) => {
         next(err);
@@ -39,19 +40,21 @@ router.post("/contacts", (req, res, next) => {
 });
 
 
-router.get("/my-rooms", (req, res, next) => {
+router.get("/my-list-contacts", (req, res, next) => {
   if (req.user === undefined) {
     res.redirect("/login");
     return;
   }
-  RoomModel
+  ContactModel
   // retrive all room owned by the logged in user
   .find({ owner: req.user._id })
   .sort({ createAt: -1 })
   .exec()
-  .then((roomResults) => {
-     res.locals.listOfRooms = roomResults;
-     res.render("room-views/room-list");
+  .then((contactsResults) => {
+
+     res.locals.listOfContacts = contactsResults;
+     res.render("user-views/list-of-contacts");
+
   })
   .catch((err) => {
     next(err);

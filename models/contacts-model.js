@@ -5,14 +5,18 @@ const Schema = mongoose.Schema;
 const roomSchema = new Schema (
   // 1st argument -> SCHEMA STRUCTURE
   {
+    initial: {
+      type: String,
+    },
     firstname: {
       type: String,
     },
-
     lastname: {
       type: String,
     },
-
+    phone: {
+      type: Number,
+    },
     email: {
       type: String
     },
@@ -30,7 +34,7 @@ const roomSchema = new Schema (
 );
 
 
-const RoomModel = mongoose.model("Room", roomSchema);
+const ContactModel = mongoose.model("Contact", roomSchema);
 
 
-module.exports = RoomModel;
+module.exports = ContactModel;
