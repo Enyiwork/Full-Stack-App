@@ -65,8 +65,9 @@ router.post("/process-signup", (req, res, next) => {
         const scrambledPassword = bcrypt.hashSync(req.body.signupPassword, salt);
 
         const theUser = new UserModel({
-
-          email:    req.body.signupEmail,
+          firstName: req.body.signupFirstName,
+          lastName:  req.body.signupLastName,
+          email:     req.body.signupEmail,
           password: scrambledPassword
         });
 
