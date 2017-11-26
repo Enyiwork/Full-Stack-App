@@ -1,0 +1,550 @@
+
+@-webkit-keyframes textGlow {
+  0% {
+    text-shadow: 0 0px 5px rgba(0, 188, 212, 0.6);
+  }
+  100% {
+    text-shadow: 0 0px 3px rgba(0, 188, 212, 0.5);
+  }
+}
+
+@keyframes textGlow {
+  0% {
+    text-shadow: 0 0px 5px rgba(0, 188, 212, 0.6);
+  }
+  100% {
+    text-shadow: 0 0px 3px rgba(0, 188, 212, 0.5);
+  }
+}
+.display-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  position: relative;
+  margin-left: 85%;
+}
+
+.display-current {
+  position: relative;
+  z-index: 1;
+  width: 225px;
+  height: 225px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+  background-color: #00376f59;
+  box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.75), 0 0 5px 1px rgba(0, 188, 212, 0.5);
+}
+
+.current.day {
+  font-size: 28px;
+  -webkit-transform: translateY(14px);
+          transform: translateY(14px);
+}
+.current.date {
+  font-size: 88px;
+  font-weight: 500;
+}
+.current.month {
+  font-size: 40px;
+  -webkit-transform: translateY(-14px);
+          transform: translateY(-14px);
+}
+
+.selector.months {
+  position: absolute;
+  top: calc(50% - 16px);
+  left: calc(50% - 16px);
+}
+.selector.days {
+  position: absolute;
+  top: calc(50% - 12px);
+  left: calc(50% - 12px);
+}
+
+.selector.month, .selector.day {
+  display: block;
+  border-radius: 50%;
+  text-align: center;
+  background-color: rgba(0, 188, 212, 0.1);
+  box-shadow: 0 0 0 1px rgba(0, 188, 212, 0.75), 0 0 3px 1px rgba(0, 188, 212, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transition: -webkit-transform 0.25s ease-in;
+  transition: -webkit-transform 0.25s ease-in;
+  transition: transform 0.25s ease-in;
+  transition: transform 0.25s ease-in, -webkit-transform 0.25s ease-in;
+}
+.selector.month:hover, .selector.day:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.75), 0 0 3px 1px rgba(255, 255, 255, 0.5);
+}
+.selector.month.active, .selector.month:active, .selector.day.active, .selector.day:active {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: #4caf50;
+  box-shadow: 0 0 0 1px rgba(76, 175, 80, 0.75), 0 0 3px 1px rgba(76, 175, 80, 0.5);
+}
+.selector.day {
+  font-size: 12px;
+  min-width: 24px;
+  min-height: 24px;
+  line-height: 24px;
+}
+.selector.day.hide {
+  visibility: hidden;
+  pointer-events: none;
+}
+.selector.month {
+  font-size: 14px;
+  min-width: 32px;
+  min-height: 32px;
+  line-height: 30px;
+}
+
+.selector.active .selector.month:nth-child(1) {
+  -webkit-transform: translate(-131.41463px, -61.27965px);
+          transform: translate(-131.41463px, -61.27965px);
+  -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+}
+
+.selector.active .selector.month:nth-child(2) {
+  -webkit-transform: translate(-111.07644px, -93.2042px);
+          transform: translate(-111.07644px, -93.2042px);
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
+.selector.active .selector.month:nth-child(3) {
+  -webkit-transform: translate(-83.16858px, -118.77705px);
+          transform: translate(-83.16858px, -118.77705px);
+  -webkit-transition-delay: 0.45s;
+          transition-delay: 0.45s;
+}
+
+.selector.active .selector.month:nth-child(4) {
+  -webkit-transform: translate(-49.59292px, -136.25543px);
+          transform: translate(-49.59292px, -136.25543px);
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
+}
+
+.selector.active .selector.month:nth-child(5) {
+  -webkit-transform: translate(-12.63758px, -144.44823px);
+          transform: translate(-12.63758px, -144.44823px);
+  -webkit-transition-delay: 0.75s;
+          transition-delay: 0.75s;
+}
+
+.selector.active .selector.month:nth-child(6) {
+  -webkit-transform: translate(25.17899px, -142.79712px);
+          transform: translate(25.17899px, -142.79712px);
+  -webkit-transition-delay: 0.9s;
+          transition-delay: 0.9s;
+}
+
+.selector.active .selector.month:nth-child(7) {
+  -webkit-transform: translate(61.27965px, -131.41463px);
+          transform: translate(61.27965px, -131.41463px);
+  -webkit-transition-delay: 1.05s;
+          transition-delay: 1.05s;
+}
+
+.selector.active .selector.month:nth-child(8) {
+  -webkit-transform: translate(93.2042px, -111.07644px);
+          transform: translate(93.2042px, -111.07644px);
+  -webkit-transition-delay: 1.2s;
+          transition-delay: 1.2s;
+}
+
+.selector.active .selector.month:nth-child(9) {
+  -webkit-transform: translate(118.77705px, -83.16858px);
+          transform: translate(118.77705px, -83.16858px);
+  -webkit-transition-delay: 1.35s;
+          transition-delay: 1.35s;
+}
+
+.selector.active .selector.month:nth-child(10) {
+  -webkit-transform: translate(136.25543px, -49.59292px);
+          transform: translate(136.25543px, -49.59292px);
+  -webkit-transition-delay: 1.5s;
+          transition-delay: 1.5s;
+}
+
+.selector.active .selector.month:nth-child(11) {
+  -webkit-transform: translate(144.44823px, -12.63758px);
+          transform: translate(144.44823px, -12.63758px);
+  -webkit-transition-delay: 1.65s;
+          transition-delay: 1.65s;
+}
+
+.selector.active .selector.month:nth-child(12) {
+  -webkit-transform: translate(142.79712px, 25.17899px);
+          transform: translate(142.79712px, 25.17899px);
+  -webkit-transition-delay: 1.8s;
+          transition-delay: 1.8s;
+}
+
+.selector.active .selector.day:nth-child(1) {
+  -webkit-transform: translate(-134.81759px, -53.37806px);
+          transform: translate(-134.81759px, -53.37806px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 0.05s;
+          transition-delay: 0.05s;
+}
+
+.selector.active .selector.day:nth-child(2) {
+  -webkit-transform: translate(-121.33083px, -79.39667px);
+          transform: translate(-121.33083px, -79.39667px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+
+.selector.active .selector.day:nth-child(3) {
+  -webkit-transform: translate(-102.88776px, -102.17196px);
+          transform: translate(-102.88776px, -102.17196px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+}
+
+.selector.active .selector.day:nth-child(4) {
+  -webkit-transform: translate(-80.24177px, -120.77358px);
+          transform: translate(-80.24177px, -120.77358px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+.selector.active .selector.day:nth-child(5) {
+  -webkit-transform: translate(-54.31796px, -134.44166px);
+          transform: translate(-54.31796px, -134.44166px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+}
+
+.selector.active .selector.day:nth-child(6) {
+  -webkit-transform: translate(-26.17528px, -142.61786px);
+          transform: translate(-26.17528px, -142.61786px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
+.selector.active .selector.day:nth-child(7) {
+  -webkit-transform: translate(3.03665px, -144.9682px);
+          transform: translate(3.03665px, -144.9682px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 0.35s;
+          transition-delay: 0.35s;
+}
+
+.selector.active .selector.day:nth-child(8) {
+  -webkit-transform: translate(32.12453px, -141.39666px);
+          transform: translate(32.12453px, -141.39666px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+}
+
+.selector.active .selector.day:nth-child(9) {
+  -webkit-transform: translate(59.90014px, -132.04913px);
+          transform: translate(59.90014px, -132.04913px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 0.45s;
+          transition-delay: 0.45s;
+}
+
+.selector.active .selector.day:nth-child(10) {
+  -webkit-transform: translate(85.22886px, -117.30746px);
+          transform: translate(85.22886px, -117.30746px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+.selector.active .selector.day:nth-child(11) {
+  -webkit-transform: translate(107.07602px, -97.77385px);
+          transform: translate(107.07602px, -97.77385px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 0.55s;
+          transition-delay: 0.55s;
+}
+
+.selector.active .selector.day:nth-child(12) {
+  -webkit-transform: translate(124.54919px, -74.24622px);
+          transform: translate(124.54919px, -74.24622px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
+}
+
+.selector.active .selector.day:nth-child(13) {
+  -webkit-transform: translate(136.93457px, -47.68566px);
+          transform: translate(136.93457px, -47.68566px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 0.65s;
+          transition-delay: 0.65s;
+}
+
+.selector.active .selector.day:nth-child(14) {
+  -webkit-transform: translate(143.72625px, -19.17718px);
+          transform: translate(143.72625px, -19.17718px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 0.7s;
+          transition-delay: 0.7s;
+}
+
+.selector.active .selector.day:nth-child(15) {
+  -webkit-transform: translate(144.64679px, 10.11469px);
+          transform: translate(144.64679px, 10.11469px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 0.75s;
+          transition-delay: 0.75s;
+}
+
+.selector.active .selector.day:nth-child(16) {
+  -webkit-transform: translate(139.65857px, 38.99337px);
+          transform: translate(139.65857px, 38.99337px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 0.8s;
+          transition-delay: 0.8s;
+}
+
+.selector.active .selector.day:nth-child(17) {
+  -webkit-transform: translate(128.96537px, 66.2792px);
+          transform: translate(128.96537px, 66.2792px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 0.85s;
+          transition-delay: 0.85s;
+}
+
+.selector.active .selector.day:nth-child(18) {
+  -webkit-transform: translate(113.004px, 90.85755px);
+          transform: translate(113.004px, 90.85755px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 0.9s;
+          transition-delay: 0.9s;
+}
+
+.selector.active .selector.day:nth-child(19) {
+  -webkit-transform: translate(92.42648px, 111.72442px);
+          transform: translate(92.42648px, 111.72442px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 0.95s;
+          transition-delay: 0.95s;
+}
+
+.selector.active .selector.day:nth-child(20) {
+  -webkit-transform: translate(68.07338px, 128.0274px);
+          transform: translate(68.07338px, 128.0274px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+
+.selector.active .selector.day:nth-child(21) {
+  -webkit-transform: translate(40.93951px, 139.10053px);
+          transform: translate(40.93951px, 139.10053px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 1.05s;
+          transition-delay: 1.05s;
+}
+
+.selector.active .selector.day:nth-child(22) {
+  -webkit-transform: translate(12.13329px, 144.49146px);
+          transform: translate(12.13329px, 144.49146px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 1.1s;
+          transition-delay: 1.1s;
+}
+
+.selector.active .selector.day:nth-child(23) {
+  -webkit-transform: translate(-17.16858px, 143.98px);
+          transform: translate(-17.16858px, 143.98px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 1.15s;
+          transition-delay: 1.15s;
+}
+
+.selector.active .selector.day:nth-child(24) {
+  -webkit-transform: translate(-45.76911px, 137.58702px);
+          transform: translate(-45.76911px, 137.58702px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 1.2s;
+          transition-delay: 1.2s;
+}
+
+.selector.active .selector.day:nth-child(25) {
+  -webkit-transform: translate(-72.5px, 125.57368px);
+          transform: translate(-72.5px, 125.57368px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 1.25s;
+          transition-delay: 1.25s;
+}
+
+.selector.active .selector.day:nth-child(26) {
+  -webkit-transform: translate(-96.2693px, 108.43072px);
+          transform: translate(-96.2693px, 108.43072px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 1.3s;
+          transition-delay: 1.3s;
+}
+
+.selector.active .selector.day:nth-child(27) {
+  -webkit-transform: translate(-116.10605px, 86.85842px);
+          transform: translate(-116.10605px, 86.85842px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 1.35s;
+          transition-delay: 1.35s;
+}
+
+.selector.active .selector.day:nth-child(28) {
+  -webkit-transform: translate(-131.19992px, 61.738px);
+          transform: translate(-131.19992px, 61.738px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 1.4s;
+          transition-delay: 1.4s;
+}
+
+.selector.active .selector.day:nth-child(29) {
+  -webkit-transform: translate(-140.93435px, 34.09561px);
+          transform: translate(-140.93435px, 34.09561px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 1.45s;
+          transition-delay: 1.45s;
+}
+
+.selector.active .selector.day:nth-child(30) {
+  -webkit-transform: translate(-144.91167px, 5.06043px);
+          transform: translate(-144.91167px, 5.06043px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 1.5s;
+          transition-delay: 1.5s;
+}
+
+.selector.active .selector.day:nth-child(31) {
+  -webkit-transform: translate(-142.96943px, -24.18147px);
+          transform: translate(-142.96943px, -24.18147px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition-delay: 1.55s;
+          transition-delay: 1.55s;
+}
