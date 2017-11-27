@@ -26,6 +26,8 @@ router.post("/contact", (req, res, next) => {
         lastname:  req.body.lastN,
         phone:     req.body.phoneN,
         email:     req.body.emailN,
+        address:   req.body.addressN,
+
         // "req.user" is the logged in user's document (defined by Passport)
         owner:     req.user._id
       });

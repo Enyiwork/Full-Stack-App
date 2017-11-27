@@ -35,8 +35,8 @@
 .display-current {
   position: relative;
   z-index: 1;
-  width: 225px;
-  height: 225px;
+  width: 245px;
+  height: 245px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -104,9 +104,9 @@
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.75), 0 0 3px 1px rgba(255, 255, 255, 0.5);
 }
 .selector.month.active, .selector.month:active, .selector.day.active, .selector.day:active {
-  background-color: rgba(76, 175, 80, 0.1);
-  color: #4caf50;
-  box-shadow: 0 0 0 1px rgba(76, 175, 80, 0.75), 0 0 3px 1px rgba(76, 175, 80, 0.5);
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #000000;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.75), 0 0 3px 1px rgb(0, 0, 0);
 }
 .selector.day {
   font-size: 12px;

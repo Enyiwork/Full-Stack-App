@@ -1,1 +1,4 @@
 node_modules
+
+#Ignore our eviroment variables file
+.env

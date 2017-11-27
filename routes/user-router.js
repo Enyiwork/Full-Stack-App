@@ -56,28 +56,31 @@ router.post("/process-signup", (req, res, next) => {
         // prevent the reset of the code running
         return;
       }
+
+      // generate a new salt for this user's password
+      const salt = bcrypt.genSaltSync(10);
+
+      // encrypt the password submitted by the user from the form
+      //                                              |
+      const scrambledPassword = bcrypt.hashSync(req.body.signupPassword, salt);
+
+      const theUser = new UserModel({
+        firstName: req.body.signupFirstName,
+        lastName:  req.body.signupLastName,
+        email:     req.body.signupEmail,
+        password: scrambledPassword
+      });
+
+      theUser.save()
+      .then(() => {
+        res.redirect("/");
+      })
+      .catch((err) => {
+        next(err);
+      });
+
+
   });
-    // generate a new salt for this user's password
-        const salt = bcrypt.genSaltSync(10);
-
-        // encrypt the password submitted by the user from the form
-        //                                              |
-        const scrambledPassword = bcrypt.hashSync(req.body.signupPassword, salt);
-
-        const theUser = new UserModel({
-          firstName: req.body.signupFirstName,
-          lastName:  req.body.signupLastName,
-          email:     req.body.signupEmail,
-          password: scrambledPassword
-        });
-
-        theUser.save()
-        .then(() => {
-          res.redirect("/");
-        })
-        .catch((err) => {
-          next(err);
-    });
 });
 
 // STEP # 1 show loging in the form

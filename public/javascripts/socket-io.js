@@ -229,7 +229,7 @@ $(function() {
   socket.on('publicChat', function (data) {
     connected = true;
     // Display the welcome message
-    var message = "Iron Public Chat";
+    var message = "ZOOM Public Chat";
     log(message, {
       prepend: true
     });

@@ -10,12 +10,12 @@ const userSchema = new Schema(
    {
      firstName: {
        type: String,
-       
+
      },
 
      lastName: {
        type: String,
-       
+
      },
 
      email: {
@@ -26,7 +26,7 @@ const userSchema = new Schema(
      password: {
        type: String
      },
-
+     
      facebookID: {
        type: String
      },

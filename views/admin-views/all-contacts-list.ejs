@@ -10,34 +10,29 @@
 </div>
 
 <div class="div-profile">
-<button class="list-contacts" href="/admin/users" data-container="body" data-toggle="popover" data-placement="botton">All Users</button>
+<button class="list-contacts" href="/admin/contacts" data-container="body" data-toggle="popover" data-placement="botton">Users Contacts</button>
 
-<h2>All Users</h2>
+<h2> All Contacts </h2>
 
 
 <ul>
-  <% listOfUsers.forEach((oneUser) => { %>
+  <% listOfContacts.forEach((oneContact) => { %>
+   <li>
+      <h3> <%= oneContact.firstname +" "+ oneContact.lastname %> </h3>
 
-    <li>
-       <h3> <%= oneUser.firstName +" "+ oneUser.lastName %> </h3>
+      <p> <%= oneContact.phone %> </p>
+      <p> <%= oneContact.email %> </p>
+      <p> <%= oneContact.address %> </p>
+      <p>
+      Owner By: <%= oneContact.owner %> </p>
 
-       <% if (oneUser.email) { %>
+     <!-- compare ObjectIds as strings (they are NOT strings by default) -->
+      <% if (oneContact.owner.toString() === currentUser._id.toString()) { %>
+        (this is you)
+        <% } %>
 
-         <p> Email: <%= oneUser.email %> </p>
-
-       <% } else if (oneUser.facebookID) { %>
-
-         <p> Facebook ID: <%= oneUser.facebookID %> </p>
-
-         <% } else if (oneUser.googleID) { %>
-
-           <p> Google ID: <%= oneUser.googleID %> </p>
-
-         <% } %>
-    </li>
-
+   </li>
   <% }) %>
 </ul>
-
 
 </div>

@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 
 
-mongoose.connect("mongodb://localhost/2nd-project", {useMongoClient: true})
+mongoose.connect(process.env.DATABASE_URL, {useMongoClient: true})
 .then(() => {
   console.log("Mongoose is connected🤩🤪🤩");
 })

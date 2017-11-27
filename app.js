@@ -10,6 +10,9 @@ const passport     = require("passport");
 const app = express();
 
 
+// Load enviroment variable form the ".env" file
+// (put this before the setup file since defines env variables)
+require("dotenv").config();
 // run the code that setup the Mongoose database connection'
 require("./config/mongoose-setup");
 
@@ -72,6 +75,9 @@ app.use(myRoom);
 
 const myContactRouter = require("./routes/contacts-router");
 app.use(myContactRouter);
+
+const myAdminRouter = require("./routes/admin-router");
+app.use(myAdminRouter);
 
 // END ROUTER------------------------------------------------------
 

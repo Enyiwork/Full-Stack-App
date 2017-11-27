@@ -5,9 +5,7 @@ const Schema = mongoose.Schema;
 const roomSchema = new Schema (
   // 1st argument -> SCHEMA STRUCTURE
   {
-    initial: {
-      type: String,
-    },
+
     firstname: {
       type: String,
     },
@@ -18,7 +16,10 @@ const roomSchema = new Schema (
       type: Number,
     },
     email: {
-      type: String
+      type: String,
+    },
+    address: {
+      type: String,
     },
 
     owner:

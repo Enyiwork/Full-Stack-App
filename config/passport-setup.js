@@ -40,12 +40,15 @@ passport.use(
     {
       // facebook CREDENTIALS
       // APP ID
-      clientID: "????",
+      clientID:     process.env.facebookID,
       // APP secret
-      clientSecret: "???",
+      clientSecret: process.env.facebookSecret,
 
       // URL (where to  go after log in is successful)( one of our routes)
-      callbackURL: "/facebook/success"
+      callbackURL: "/facebook/success",
+
+      // fixes GoogleStrategy
+      proxy: true
 
     },
     // 2nd arg of FbStrategy -> callback
@@ -96,8 +99,8 @@ passport.use(
   // 1st arg of GoogleStrategy -> settings object
   new GoogleStrategy(
     {
-      clientID:"???",
-      clientSecret: "?",
+      clientID:     process.env.googleID,
+      clientSecret: process.env.googleSecret,
 
       // URL (where to  go after log in is successful)( one of our routes)
       callbackURL: "/google/success",

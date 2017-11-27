@@ -319,16 +319,16 @@ ul {
 /* NAV LOGIN */
 .img-list{
   vertical-align: middle;
-  width: 24%;
+  width: 20%;
   margin-left: 3px;
 }
 .myList{
   float: right;
-  margin-top: 65px;
+  margin-top: 70px;
   font-size: 24px;
   color: #FFF;
   width: 11%;
-  margin-right: 10px;
+  margin-right: 35px;
 }
 .myList:hover{
   color: #FFF;
@@ -345,7 +345,7 @@ ul {
   font-size: 24px;
   color: #FFF;
   width: 11%;
-  margin-right: 10px;
+  margin-right: -10px;
 }
 .contacts:hover{
   color: #FFF;

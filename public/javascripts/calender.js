@@ -89,3 +89,10 @@ days.forEach((el, index) => {
 
 resetToCurrent();
 setTimeout(activateMonths, 150);
+
+var myVar = setInterval(myTimer);
+
+function myTimer() {
+    var d = new Date();
+    document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+}

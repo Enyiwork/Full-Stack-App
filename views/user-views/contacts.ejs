@@ -2,7 +2,7 @@
   <h2 class="welcome">Welcome <%= currentUser.firstName +" "+ currentUser.lastName %></h2>
   <a class="log-out" href="/logout"data-toggle="tooltip" data-placement="bottom" title="Log Out">Log out<img class="log-out-img" src="https://openclipart.org/image/2400px/svg_to_png/196995/mono-exit.png" /></a>
   <a class="myProfile" href="/profile"data-toggle="tooltip" data-placement="bottom" title="My Profile">My Profile<img class="img-nav-login" src="https://cdn3.iconfinder.com/data/icons/rcons-user-action/32/boy-512.png" /></a>
-  <a class="myList" href="/list"data-toggle="tooltip" data-placement="bottom" title="My Goals">My Goals<img class="img-list" src="https://cdn3.iconfinder.com/data/icons/business-212/48/checklist-512.png"></a>
+  <a class="myList" href="/list"data-toggle="tooltip" data-placement="bottom" title="My Goals">My Schedule<img class="img-list" src="https://cdn4.iconfinder.com/data/icons/stroke-business/512/date_and_time_clock-512.png"></a>
   <a class="contacts" href="/contacts"data-toggle="tooltip" data-placement="bottom" title="Contacts">Contacts<img class="contacts-img" src="https://cdn3.iconfinder.com/data/icons/users/100/contacts_book-512.png"></a>
   <a class="home" href="/publicChat"data-toggle="tooltip" data-placement="bottom" title="Home">Home<img class="home-img" src="http://dougbond.com/images/home-icon.png"></a>
   <img class="img-profile" src="https://res.cloudinary.com/crunchbase-production/image/upload/v1454008732/mnno8g6ae7mcjnawnfpx.png" />
@@ -18,7 +18,8 @@
   </button>
 
   <a class="list-contact" href="my-list-contacts">List Contacts</a>
-
+  <a class="list-contact" href="/admin/users">All Users</a>
+  <a class="list-contact" href="/admin/contacts">Users Contacts</a>
   <div id="btn-plus">
     <ul>
 
@@ -40,6 +41,10 @@
 
         <input id="email" type="email" placeholder="Email Address"
         name="emailN">
+        <br />
+
+        <input id="address" type="text" placeholder="Address"
+        name="addressN">
         <br />
 
         <button class="save-btn"> Save </button>
