@@ -10,14 +10,13 @@
 </div>
 
 <div class="div-profile">
-<button class="list-contacts" href="/admin/contacts" data-container="body" data-toggle="popover" data-placement="botton">Users Contacts</button>
+  <a class="list-contact" href="../my-list-contacts">List Contacts</a>
 <% if (currentUser.role === "admin"){ %>
 
   <a class="all-users" href="/admin/users">All Users</a>
   <a class="all-contacts" href="/admin/contacts">Users Contacts</a>
 
 <% } %>
-<h2 class="user-and-contacts"> All Users Contacts </h2>
 
 
 <ul class="contact-list">

@@ -26,10 +26,11 @@ const userSchema = new Schema(
      password: {
        type: String
      },
-     
+
      facebookID: {
        type: String
      },
+
 
      googleID: {
        type: String

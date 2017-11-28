@@ -4,20 +4,11 @@ const ContactModel = require("../models/contacts-model");
 
 const router = express.Router();
 
-router.get("/contacts/new", (req, res, next) => {
-  if (req.user === undefined) {
-    res.redirect("/login");
-
-    return;
-  }
-
-  res.render("user-views/form-contacts");
-});
 
 router.post("/contact", (req, res, next) => {
   // redirect to log in if there is no logged in users
   if (req.user === undefined) {
-    res.redirect("/login");
+    res.redirect("/publicChat");
     return;
   }
       const theContact = new ContactModel({
@@ -44,7 +35,7 @@ router.post("/contact", (req, res, next) => {
 
 router.get("/my-list-contacts", (req, res, next) => {
   if (req.user === undefined) {
-    res.redirect("/login");
+    res.redirect("/publicChat");
     return;
   }
   ContactModel
@@ -127,5 +118,22 @@ router.post("/my-list-contacts/:prodId", (req, res, next) => {
         }
       });
 });
+
+// use this or the GET version of deleting (not both)
+router.get("/my-list-contacts/:prodId/delete", (req, res, next) => {
+    ContactModel.findByIdAndRemove(req.params.prodId)
+      .then((productFromDb) => {
+          // redirect to the list of products page
+          // (you can't see the details of a product that isn't in the DB)
+          res.redirect("/my-list-contacts");
+            // you CAN'T redirect to an EJS file
+            // you can ONLY redirect to a URL
+      })
+      .catch((err) => {
+          next(err);
+      });
+});
+
+
 
 module.exports = router;

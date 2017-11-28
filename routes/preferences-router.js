@@ -14,14 +14,7 @@ router.get("/profile", (req, res, next) => {
 });
 
 
-router.get("/list", (req, res, next) => {
-  if (req.user === undefined){
-      res.redirect("/publicChat");
 
-      return;
-  }
-  res.render("user-views/list-goals.ejs");
-});
 
 router.get("/contacts", (req, res, next) => {
   if (req.user === undefined){

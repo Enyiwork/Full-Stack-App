@@ -1,0 +1,14 @@
+
+.container{
+  width: auto;
+}
+.clear{
+  float: right;
+  margin-right: 10px;
+  background-color: darkred;
+  border-color: darkred;
+  color: #FFF;
+  padding: 5px;
+  font-size: 18px;
+  margin-top: 1px;
+}

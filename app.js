@@ -79,6 +79,9 @@ app.use(myContactRouter);
 const myAdminRouter = require("./routes/admin-router");
 app.use(myAdminRouter);
 
+const myListRouter = require("./routes/list-goals-router");
+app.use(myListRouter);
+
 // END ROUTER------------------------------------------------------
 
 // catch 404 and forward to error handler
