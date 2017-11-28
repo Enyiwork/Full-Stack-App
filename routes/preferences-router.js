@@ -30,6 +30,7 @@ router.get("/contacts", (req, res, next) => {
       return;
   }
   res.render("user-views/contacts.ejs");
+
 });
 
 

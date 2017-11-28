@@ -1,5 +1,5 @@
 <div class="nav-bar">
-  <h2 class="welcome">Welcome <%= currentUser.firstName +" "+ currentUser.lastName %></h2>
+  <h2 class="welcome">Welcome <%= productDetails.firstName +" "+ productDetails.lastName %></h2>
   <a class="log-out" href="/logout"data-toggle="tooltip" data-placement="bottom" title="Log Out">Log out<img class="log-out-img" src="https://openclipart.org/image/2400px/svg_to_png/196995/mono-exit.png" /></a>
   <a class="myProfile" href="/profile"data-toggle="tooltip" data-placement="bottom" title="My Profile">My Profile<img class="img-nav-login" src="https://cdn3.iconfinder.com/data/icons/rcons-user-action/32/boy-512.png" /></a>
   <a class="myList" href="/list"data-toggle="tooltip" data-placement="bottom" title="My Goals">My Schedule<img class="img-list" src="https://cdn4.iconfinder.com/data/icons/stroke-business/512/date_and_time_clock-512.png"></a>
@@ -17,40 +17,44 @@
     <img class="img-plus-btn"src="https://cdn2.iconfinder.com/data/icons/picons-essentials/71/user_add-512.png" />
   </button>
 
-  <a class="list-contact" href="my-list-contacts">List Contacts</a>
-  <div id="btn-plus">
-    <ul>
+  <h2> Edit This Product </h2>
 
-      <h2 class="contact-title">New Contact</h2>
+  <!-- wird if statement with "TYPEOF" to avoid an error-->
+  <% if (typeof validationError !== "undefined") { %>
+    <ul class="error">
+    <!-- we cant do a forEach loop because "vaidationErrors" is an object -->
 
-      <form class="add-contacts" method="post" action="/contact">
-
-        <input id="first-name" type="text" placeholder="First Name"
-        name="firstN">
-
-        <input id="last-name" type="text" placeholder="Last Name"
-        name="lastN">
-
-        <br />
-
-        <input id="phone" type="text" placeholder="Phone Number"
-        name="phoneN">
-        <br />
-
-        <input id="email" type="email" placeholder="Email Address"
-        name="emailN">
-        <br />
-
-        <input id="email" type="text" placeholder="Address"
-        name="addressN">
-        <br />
-
-        <button class="save-btn"> Save </button>
-      </form>
-
-
+      <% for (let field in validationErrors) { %>
+        <li> <%= validationErrors[field].message %> </li>
+    <% } %>
     </ul>
-  </div>
+  <% } %>
 
+
+  <form class="add-contacts" method="post" action="/my-list-contacts/<%= productDetails._id %>">
+
+
+    <input id="first-name" type="text" placeholder="First Name"
+    name="firstN" value="<%= productDetails.firstname %>"/>
+
+    <input id="last-name" type="text" placeholder="Last Name"
+    name="lastN" value="<%= productDetails.lastname %>"/>
+
+    <br />
+
+    <input id="phone" type="text" placeholder="Phone Number"
+    name="phoneN" value="<%= productDetails.phone %>"/>
+    <br />
+
+    <input id="email" type="email" placeholder="Email Address"
+    name="emailN" value="<%= productDetails.email %>"/>
+    <br />
+
+    <input id="address" type="text" placeholder="Address"
+    name="addressN" value="<%= productDetails.address %>"/>
+    <br />
+
+    <button class="save-btn"> Submit Changes </button>
+  </form>
 
 </div>

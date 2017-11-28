@@ -10,28 +10,33 @@
 </div>
 
 <div class="div-profile">
-<button class="list-contacts" href="/admin/users" data-container="body" data-toggle="popover" data-placement="botton">All Users</button>
+  <a class="list-contact" href="my-list-contacts">List Contacts</a>
+  <% if (currentUser.role === "admin"){ %>
 
-<h2>All Users</h2>
+    <a class="all-users" href="/admin/users">All Users</a>
+    <a class="all-contacts" href="/admin/contacts">Users Contacts</a>
+
+  <% } %>
+<h2 class="user-and-contacts"> All Users </h2>
 
 
 <ul>
   <% listOfUsers.forEach((oneUser) => { %>
 
-    <li>
-       <h3> <%= oneUser.firstName +" "+ oneUser.lastName %> </h3>
+    <li style="margin-right: 5%; margin-bottom: 5%; font-size: 20px; color: #FFF;">
+       <h3 class="down"> <%= oneUser.firstName +" "+ oneUser.lastName %> </h3>
 
        <% if (oneUser.email) { %>
 
-         <p> Email: <%= oneUser.email %> </p>
+         <p class="down"> Email: <%= oneUser.email %> </p>
 
        <% } else if (oneUser.facebookID) { %>
 
-         <p> Facebook ID: <%= oneUser.facebookID %> </p>
+         <p class="down"> Facebook ID: <%= oneUser.facebookID %> </p>
 
          <% } else if (oneUser.googleID) { %>
 
-           <p> Google ID: <%= oneUser.googleID %> </p>
+           <p class="down"> Google ID: <%= oneUser.googleID %> </p>
 
          <% } %>
     </li>

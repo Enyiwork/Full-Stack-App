@@ -19,6 +19,14 @@
 
   <button class="list-contacts" href="my-list-contacts" data-container="body" data-toggle="popover" data-placement="botton">List Contacts</button>
 
+     <% if (currentUser.role === "admin"){ %>
+
+       <a class="all-users" href="/admin/users">All Users</a>
+       <a class="all-contacts" href="/admin/contacts">Users Contacts</a>
+
+     <% } %>
+
+
     <div id="btn-plus">
       <ul>
 
@@ -44,7 +52,7 @@
           name="emailN">
           <br />
 
-          <input id="address" type="text" placeholder="Address"
+          <input id="email" type="text" placeholder="Address"
           name="addressN">
           <br />
 
@@ -63,11 +71,17 @@
         <ul class="contact-list">
           <% listOfContacts.forEach((oneContact) => { %>
             <li style="margin-right: 5%; margin-bottom: 5%; font-size: 20px; color: #FFF;">
-            <h4>Name: <%= oneContact.firstname +" "+ oneContact.lastname %> </h4>
-            <p>Phone Number:  <%= oneContact.phone %> </p>
-            <p>Eamil Address:  <%= oneContact.email %> </p>
-            <p>Address:  <%= oneContact.address %> </p>
-
+            <h4 class="line-down">Name: <%= oneContact.firstname +" "+ oneContact.lastname %> </h4>
+            <p class="line-down">Phone Number:  <%= oneContact.phone %> </p>
+            <p class="line-down">Eamil Address:  <%= oneContact.email %> </p>
+            <p class="line-down">Address:  <%= oneContact.address %> </p>
+               <ul>
+                  <li>
+                  <a class="edit line-down" href="my-list-contacts/<%= oneContact._id %>/edit">
+                    Edit Contact
+                  </a>
+                  </li>
+               </ul>
             </li>
             <% }) %>
           </ul>

@@ -556,4 +556,57 @@ ul {
 }
 .panel-body {
     padding: 15px;
+    padding-top: 50px;
+
+}
+.list-add{
+  width: 70%;
+border: 1px solid;
+border-radius: 5px;
+padding: 40px;
+}
+#content{
+  width: 90%;
+  padding: 15px;
+  background-color: #5e8ebe;
+  border: 1px solid;
+  border-radius: 5px;
+  font-size: 25px;
+}
+.edit{
+  font-family: monospace;
+  color: #000;
+  text-decoration: none;
+}
+
+.line-down{
+  border-bottom: 1px solid #1a95ff;
+  width: fit-content;
+}
+.all-users{
+  color: #FFF;
+  font-size: 35px;
+  margin-left: 20%;
+}
+.all-users:hover{
+  color: #FFF;
+  text-decoration: none;
+}
+.all-contacts{
+  color: #FFF;
+  font-size: 35px;
+  margin-left: 35%;
+}
+.all-contacts:hover{
+  color: #FFF;
+  text-decoration: none;
+}
+.down{
+  border-bottom: 1px solid #000;
+  width: fit-content;
+}
+.user-and-contacts{
+  color: #FFF;
+  text-align: center;
+  font-size: 40px;
 }
